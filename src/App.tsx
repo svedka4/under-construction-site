@@ -6,6 +6,7 @@ function App() {
 
   return (
     <div>
+      <p>© 2025 švedka. All rights reserved.</p>
       <h1 className="text-3x1 font-bold underline">Under Construction</h1>{/* Your content here */}
     </div>
   );

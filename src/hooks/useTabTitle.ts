@@ -17,7 +17,6 @@ const useTabTitle = (focusedTitle: string, blurredTitle: string): void => {
     window.addEventListener('focus', handleFocus);
     window.addEventListener('blur', handleBlur);
 
-    // Initial title set
     document.title = isTabFocused ? focusedTitle : blurredTitle;
 
     return () => {
