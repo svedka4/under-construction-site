@@ -1,0 +1,12 @@
+.container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .image {
+    height: 100%;
+    display: block;
+  }

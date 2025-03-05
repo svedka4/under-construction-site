@@ -1,0 +1,13 @@
+import React from 'react';
+import styles from './ProfilePhoto.module.css';
+import profilePhoto from '../../assets/profile-photo.jpg';
+
+const ProfilePhoto: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <img src={profilePhoto} alt="Profile" className={styles.image} />
+    </div>
+  );
+};
+
+export default ProfilePhoto;
