@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div>
-      <h1>Under Construction</h1>{/* Your content here */}
+      <h1 className="text-3x1 font-bold underline">Under Construction</h1>{/* Your content here */}
     </div>
   );
 }
