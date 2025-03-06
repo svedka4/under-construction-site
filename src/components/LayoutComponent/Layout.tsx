@@ -6,10 +6,10 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+function Layout(props: LayoutProps) {
   return (
     <div className={styles.container}>
-      {children}
+      {props.children}
       <ProfilePhoto /> {}
       <footer className={styles.footer}>
         <p className={styles.copyright}>© 2025 švedka. All rights reserved.</p>
