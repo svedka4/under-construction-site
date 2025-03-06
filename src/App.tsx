@@ -1,6 +1,7 @@
 // src/App.tsx
 import useTabTitle from './hooks/useTabTitle';
 import Layout from './components/LayoutComponent/Layout';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 
 function App() {
   useTabTitle('Software Developer & DJ', 'Gabija Svedkauskaite');
@@ -8,6 +9,7 @@ function App() {
   return (
     <Layout>
       <div>
+        <MusicPlayer></MusicPlayer>
       </div>
     </Layout>
   );

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Howl } from 'howler';
+import { Howl, Howler } from 'howler';
+import mix from '../../assets/mix.wav'
 
 function MusicPlayer() {
     const [sound, setSound] = useState<Howl | null>(null);
@@ -7,7 +8,11 @@ function MusicPlayer() {
 
     useEffect(() => {
         const newSound = new Howl({
-            src: [],
+            src: [mix],
+            html5: true,
+            autoplay: true,
+            loop: true,
+            volume: 0.5,
             onend: () => {
                 setIsPlaying(false);
             },
@@ -35,7 +40,7 @@ function MusicPlayer() {
 
     return (
         <div>
-            <button onClick={handlePlayPause}></button>
+            <button onClick={handlePlayPause}>ICON</button>
             {/* progress bar and controls */}
         </div>
     );
