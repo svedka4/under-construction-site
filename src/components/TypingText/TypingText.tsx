@@ -8,8 +8,8 @@ type TerminalTypeProps = {
 
 export default function TypingText({
   lines,
-  charDelay = 0.035,
-  lineDelay = 0.6,
+  charDelay = 0.055,
+  lineDelay = 2.505,
 }: TerminalTypeProps) {
   return (
     <div>
