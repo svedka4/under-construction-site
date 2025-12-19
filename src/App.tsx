@@ -52,8 +52,8 @@ function App() {
               }}
             >
               <a href="/">notify me</a>
-              {" · "}
-              <a href="/">follow my journey</a>
+              {" ✫ "}
+              <a href="https://github.com/svedka4">follow my journey → </a>
             </motion.div>
           )}
 
