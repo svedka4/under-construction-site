@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 type TerminalTypeProps = {
   lines: string[];
@@ -14,50 +13,49 @@ export default function TypingText({
   lineDelay = 2.505,
   onComplete,
 }: TerminalTypeProps) {
-
-  useEffect(() => {
-    if (!onComplete) return;
-
-    const totalChars = lines.reduce((acc, line) => acc + line.length, 0);
-    const totalTime =
-      totalChars * charDelay * 1000 +
-      (lines.length - 1) * lineDelay * 1000;
-
-    const timeout = setTimeout(onComplete, totalTime);
-    return () => clearTimeout(timeout);
-  }, [lines, charDelay, lineDelay, onComplete]);
+  const lastLineIndex = lines.length - 1;
 
   return (
     <div>
-      {lines.map((line, lineIndex) => (
-        <motion.div
-          key={lineIndex}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: charDelay,
-                delayChildren: lineIndex * lineDelay,
+      {lines.map((line, lineIndex) => {
+        const isLastLine = lineIndex === lastLineIndex;
+
+        return (
+          <motion.div
+            key={lineIndex}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: charDelay,
+                  delayChildren: lineIndex * lineDelay,
+                },
               },
-            },
-          }}
-          style={{ whiteSpace: "pre" }}
-        >
-          {line.split("").map((char, charIndex) => (
-            <motion.span
-              key={charIndex}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-            >
-              {char}
-            </motion.span>
-          ))}
-        </motion.div>
-      ))}
+            }}
+            style={{ whiteSpace: "pre" }}
+          >
+            {line.split("").map((char, charIndex) => {
+              const isLastChar =
+                isLastLine && charIndex === line.length - 1;
+
+              return (
+                <motion.span
+                  key={charIndex}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                  }}
+                  onAnimationComplete={isLastChar ? onComplete : undefined}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
