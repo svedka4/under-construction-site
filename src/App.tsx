@@ -2,12 +2,16 @@
 import useTabTitle from './hooks/useTabTitle';
 import Layout from './components/LayoutComponent/Layout';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
+import TypingText from './components/TypingText/TypingText'
 
 function App() {
-  useTabTitle('Software Developer & DJ', 'Gabija Svedkauskaite');
+  useTabTitle('Under Construction', 'Gabija Svedkauskaite');
 
   return (
     <Layout>
+      <div>
+        <TypingText></TypingText>
+      </div>
       <div>
         <MusicPlayer></MusicPlayer>
       </div>
