@@ -12,7 +12,7 @@ function Layout(props: LayoutProps) {
       {props.children}
       <ProfilePhoto />
       <footer className={styles.footer}>
-        <p className={styles.copyright}>© 2025 švedka. All rights reserved.</p>
+        <p className={styles.copyright}>© 2026 švedka. All rights reserved.</p>
       </footer>
     </div>
   );
