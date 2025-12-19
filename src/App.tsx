@@ -51,9 +51,20 @@ function App() {
                 ease: "easeOut",
               }}
             >
-              <a href="/">notify me</a>
+              <a href="mailto:hello@gabiscode.com">reach me</a>
               {" ✫ "}
-              <a href="https://github.com/svedka4">follow my journey → </a>
+              <span className={styles.follow}>
+                follow my journey →
+                <a href="https://github.com/svedka4" target="_blank" rel="noopener">
+                  <img src="/src/assets/github.svg" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/svedkauskaite/" target="_blank" rel="noopener">
+                  <img src="/src/assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a href="https://www.instagram.com/gabi_codes/" target="_blank" rel="noopener">
+                  <img src="/src/assets/insta.svg" alt="Instagram" />
+                </a>
+            </span>
             </motion.div>
           )}
 
