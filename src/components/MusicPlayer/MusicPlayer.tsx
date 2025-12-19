@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Howl, Howler } from 'howler';
-import mix from '../../assets/mix.wav'
 
 function MusicPlayer() {
     const [sound, setSound] = useState<Howl | null>(null);
@@ -8,7 +7,7 @@ function MusicPlayer() {
 
     useEffect(() => {
         const newSound = new Howl({
-            src: [mix],
+            src: ['https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2155966862%3Fsecret_token%3Ds-HGFGf0qI3JX&color=%23000000&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true'],
             html5: true,
             autoplay: true,
             loop: true,
@@ -41,7 +40,6 @@ function MusicPlayer() {
     return (
         <div>
             <button onClick={handlePlayPause}>ICON</button>
-            {/* progress bar and controls */}
         </div>
     );
 };
