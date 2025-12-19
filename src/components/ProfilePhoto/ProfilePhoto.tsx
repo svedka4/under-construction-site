@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styles from './ProfilePhoto.module.css';
 import profilePhoto from '../../assets/distorted-negative.jpg';
 
