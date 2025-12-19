@@ -3,12 +3,12 @@
 .terminal {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
 
-    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    font-size: 1.8rem;
 
-    letter-spacing: 0.01em;
+    letter-spacing: 0.05em;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.82);
 
@@ -17,10 +17,22 @@
     0 0 2px rgba(0, 0, 0, 0.85);
 
     position: absolute;
-    left: clamp(1.5rem, 6vw, 6rem);
-    top: 48%;
+    left: 20%;
+    top: 50%;
     transform: translateY(-50%);
-    max-width: 520px;
+    max-width: 620px;
+
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    .terminal {
+      left: 40%;
+      top: 40%;
+      transform: translate(-50%);
+  
+      font-size: 0.95rem;
+    }
   }
 
   .meta {
